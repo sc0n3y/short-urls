@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Source directory for your TypeScript files
+    "resolveJsonModule": true,
+    "declaration": true,               // Generate declaration files (.d.ts)
+    "typeRoots": ["./node_modules/@types"],
+    "lib": ["ESNext", "DOM"],
+  },
+  "include": [
+    "src/**/*.ts"
+  ], // Specify the path to your TypeScript source files
+  "exclude": [
+    "node_modules"
+  ]
+}
