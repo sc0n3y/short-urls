@@ -15,17 +15,6 @@ class LinkService {
     return prisma.link.findUnique({ where: { code } });
   }
   
-  async trackClick(
-    linkId: number, 
-    ipAddress: string, 
-    userAgent: string, 
-    headers: object, 
-    referer: string
-    ) {
-    const click = await ClickService.createClick(linkId, ipAddress, userAgent, headers, referer);
-    return click;
-  }
-  
   private generateShortCode() {
     const uuid = uuidv4();
     const shortCode = uuid.substring(0, 8);
