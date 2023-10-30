@@ -13,7 +13,7 @@ if (!process.env.DATABASE_URL) {
 }
 const PORT = process.env.PORT || 3000;
 
-app.use('/links', LinkController.getRouter());
+app.use('/s', LinkController.getRouter());
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

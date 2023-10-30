@@ -17,5 +17,24 @@ model Link {
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
+  clicks Click[]
+
   @@map("links")
+}
+
+model Click {
+  id   Int    @id @default(autoincrement())
+  uuid String @default(uuid())
+  link_id    Int
+  
+  ip_address String
+  user_agent String
+  headers   Json 
+  referer String
+
+  created_at DateTime @default(now())
+  
+  link Link @relation(fields: [link_id], references: [id])
+
+  @@map("clicks")
 }
